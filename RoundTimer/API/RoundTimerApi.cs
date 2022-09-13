@@ -9,10 +9,10 @@ namespace RoundTimer.API
 {
     public static class RoundTimerApi
     {
-        private static TimeSpan _oldRoundTime = Round.ElapsedTime;
         internal static CoroutineHandle Coroutine;
-
-        public static bool RoundTimeChanged
+        
+        private static TimeSpan _oldRoundTime = Round.ElapsedTime;
+        private static bool _roundTimeChanged
         {
             get
             {
@@ -27,7 +27,7 @@ namespace RoundTimer.API
         {
             while (true)
             {
-                if (!RoundTimeChanged) continue;
+                if (!_roundTimeChanged) continue;
                 
                 foreach (Player player in Player.List)
                 {
