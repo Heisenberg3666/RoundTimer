@@ -1,22 +1,25 @@
-﻿using Exiled.Events.EventArgs;
+﻿using System;
+using Exiled.Events.EventArgs;
 using Exiled.Events.Handlers;
 using MEC;
 using RoundTimer.API;
 
 namespace RoundTimer.Events
 {
-    internal class ServerEvents
+    internal class ServerEvents : IDisposable
     {
         public ServerEvents()
         {
             Server.RoundStarted += OnRoundStarted;
             Server.RoundEnded += OnRoundEnded;
         }
-
-        ~ServerEvents()
+        
+        public void Dispose()
         {
             Server.RoundStarted -= OnRoundStarted;
             Server.RoundEnded -= OnRoundEnded;
+            
+            GC.SuppressFinalize(this);
         }
 
         private void OnRoundStarted()
