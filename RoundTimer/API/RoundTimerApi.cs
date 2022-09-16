@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using AdvancedHints.Components;
+using AdvancedHints;
+using AdvancedHints.Enums;
 using Exiled.API.Features;
 using MEC;
 using RoundTimer.Config;
@@ -32,7 +33,12 @@ namespace RoundTimer.API
                 
                 foreach (Player player in Player.List)
                 {
-                    HudManager.ShowHint(player, $"{_translation.RoundTime}: {FormatTime(Round.ElapsedTime)}", 1f);
+                    player.ShowManagedHint(
+                        $"<align=left>{_translation.RoundTime}: {FormatTime(Round.ElapsedTime)}</align>", 
+                        1f, 
+                        true, 
+                        DisplayLocation.Bottom
+                    );
                 }
 
                 yield return Timing.WaitForOneFrame;
