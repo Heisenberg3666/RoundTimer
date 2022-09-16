@@ -1,8 +1,8 @@
 ﻿using Exiled.API.Interfaces;
 
-namespace RoundTimer
+namespace RoundTimer.Config
 {
-    public class Config : IConfig
+    public class BaseConfig : IConfig
     {
         public bool IsEnabled { get; set; } = true;
     }

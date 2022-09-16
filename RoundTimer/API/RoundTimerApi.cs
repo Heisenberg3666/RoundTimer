@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using AdvancedHints.Components;
 using Exiled.API.Features;
 using MEC;
+using RoundTimer.Config;
 
 namespace RoundTimer.API
 {
     public static class RoundTimerApi
     {
         internal static CoroutineHandle Coroutine;
-        
+
+        private static readonly Translation _translation = Plugin.Instance.Translation;
         private static TimeSpan _oldRoundTime = Round.ElapsedTime;
         private static bool _roundTimeChanged
         {
@@ -30,14 +32,19 @@ namespace RoundTimer.API
                 
                 foreach (Player player in Player.List)
                 {
-                    HudManager.ShowHint(player, $"Round Time: {FormatTime(Round.ElapsedTime)}", 1f);
+                    HudManager.ShowHint(player, $"{_translation.RoundTime}: {FormatTime(Round.ElapsedTime)}", 1f);
                 }
 
                 yield return Timing.WaitForOneFrame;
             }
         }
 
-        private static string FormatTime(TimeSpan time) => 
-            time.Minutes < 1 ? $"{time.Seconds}s" : $"{time.Minutes}m {time.Seconds}s";
+        private static string FormatTime(TimeSpan time)
+        {
+            if (time.Minutes < 1)
+                return $"{time.Seconds}{_translation.SecondSymbol}";
+            return $"{time.Minutes}{_translation.MinuteSymbol} {time.Seconds}{_translation.SecondSymbol}";
+            
+        }
     }
 }

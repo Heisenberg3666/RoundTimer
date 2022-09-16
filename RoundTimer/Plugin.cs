@@ -1,12 +1,15 @@
 ﻿using System;
 using Exiled.API.Features;
+using RoundTimer.Config;
 using RoundTimer.Events;
 
 namespace RoundTimer
 {
-    public class Plugin : Plugin<Config>
+    public class Plugin : Plugin<BaseConfig, Translation>
     {
         private ServerEvents _serverEvents;
+
+        internal static Plugin Instance;
         
         public override string Name { get; } = nameof(RoundTimer);
         public override string Author { get; } = "Heisenberg3666";
@@ -15,6 +18,8 @@ namespace RoundTimer
 
         public override void OnEnabled()
         {
+            Instance = this;
+            
             _serverEvents = new ServerEvents();
             
             base.OnEnabled();
@@ -24,6 +29,8 @@ namespace RoundTimer
         {
             _serverEvents.Dispose();
             _serverEvents = null;
+
+            Instance = null;
             
             base.OnDisabled();
         }
