@@ -11,6 +11,7 @@ namespace RoundTimer.API
     public static class RoundTimerApi
     {
         internal static CoroutineHandle Coroutine;
+        internal static List<Player> BlacklistedPlayers = new List<Player>();
 
         private static readonly Translation _translation = Plugin.Instance.Translation;
         private static TimeSpan _oldRoundTime = Round.ElapsedTime;
@@ -33,6 +34,8 @@ namespace RoundTimer.API
                 
                 foreach (Player player in Player.List)
                 {
+                    if (BlacklistedPlayers.Contains(player)) continue;
+                    
                     player.ShowManagedHint(
                         $"<align=left>{_translation.RoundTime}: {FormatTime(Round.ElapsedTime)}</align>", 
                         1f, 

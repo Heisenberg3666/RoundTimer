@@ -2,4 +2,6 @@
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CDylan_0020Morris_005CDownloads_005CAdvancedHints_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CDylan_0020Morris_005CDownloads_005CMaster_002D5_002E3_002E0_005CAssembly_002DCSharp_002Dfirstpass_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CDylan_0020Morris_005CDownloads_005CMaster_002D5_002E3_002E0_005CAssembly_002DCSharp_002DPublicized_002Edll/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CDylan_0020Morris_005CDownloads_005CMaster_002D5_002E3_002E0_005CUnityEngine_002ECoreModule_002Edll/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CDylan_0020Morris_005CDownloads_005CMaster_002D5_002E3_002E0_005CMirror_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CDylan_0020Morris_005CDownloads_005CMaster_002D5_002E3_002E0_005CUnityEngine_002ECoreModule_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CDylan_0020Morris_005CDownloads_005CMaster_002D5_002E3_002E0_005CUnityEngine_002EPhysicsModule_002Edll/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

@@ -74,6 +74,9 @@
         <Reference Include="Exiled.Updater, Version=3.1.1.0, Culture=neutral, processorArchitecture=Amd64">
           <HintPath>..\packages\EXILED.5.3.0\lib\net472\Exiled.Updater.dll</HintPath>
         </Reference>
+        <Reference Include="Mirror">
+          <HintPath>..\..\..\Downloads\Master-5.3.0\Mirror.dll</HintPath>
+        </Reference>
         <Reference Include="NorthwoodLib, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
           <HintPath>..\packages\EXILED.5.3.0\lib\net472\NorthwoodLib.dll</HintPath>
         </Reference>
@@ -84,9 +87,13 @@
         <Reference Include="UnityEngine.CoreModule">
           <HintPath>..\..\..\Downloads\Master-5.3.0\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
+        <Reference Include="UnityEngine.PhysicsModule">
+          <HintPath>..\..\..\Downloads\Master-5.3.0\UnityEngine.PhysicsModule.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="API\RoundTimerApi.cs" />
+        <Compile Include="Commands\RoundTimer.cs" />
         <Compile Include="Config\BaseConfig.cs" />
         <Compile Include="Config\Translation.cs" />
         <Compile Include="Events\ServerEvents.cs" />
